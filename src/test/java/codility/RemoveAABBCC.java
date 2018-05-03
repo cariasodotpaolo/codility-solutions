@@ -11,20 +11,12 @@ public class RemoveAABBCC {
         while(contains) {
 
             if (returnVal.contains("AA")) {
-                contains = true;
                 returnVal = returnVal.replaceAll("AA", "");
-
-            }
-             else if (returnVal.contains("BB")) {
-                contains = true;
+            } else if (returnVal.contains("BB")) {
                 returnVal = returnVal.replaceAll("BB", "");
-
-            }
-
-            else if (returnVal.contains("CC")) {
+            } else if (returnVal.contains("CC")) {
                 returnVal = returnVal.replaceAll("CC", "");
             } else {
-
                 contains = false;
             }
 
