@@ -30,7 +30,7 @@ public class RemoveAABBCC {
 
         RemoveAABBCC d = new RemoveAABBCC();
 
-        String in = "ACCAABBC";
+        String in = "ACCAABBBC";
 
 
 
