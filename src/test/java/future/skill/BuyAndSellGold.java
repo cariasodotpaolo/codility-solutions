@@ -1,6 +1,6 @@
 package future.skill;
 
-public class BuyAndSellStock {
+public class BuyAndSellGold {
 
     private static int[] prices;
     private int sellDay = -1;
@@ -15,7 +15,7 @@ public class BuyAndSellStock {
         return prices[day];
     }
 
-    public BuyAndSellStock(int[] prices) {
+    public BuyAndSellGold(int[] prices) {
         this.prices = prices;
         getOptimalBuyOrSellDay();
     }
@@ -62,7 +62,7 @@ public class BuyAndSellStock {
 
         int[] prices  = {7, 9, 4, 5, 14, 12, 1, 5, 12, 8, 12, 9, 10};
 
-        BuyAndSellStock bns = new BuyAndSellStock(prices);
+        BuyAndSellGold bns = new BuyAndSellGold(prices);
         int buyDay = bns.getBuyDay();
         int sellDay = bns.getSellDay();
         int buyPrice = bns.getPriceOnDay(buyDay);
