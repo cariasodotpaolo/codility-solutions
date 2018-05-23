@@ -2,22 +2,24 @@ package future.skill;
 
 public class BuyAndSellGold {
 
-    private static int[] prices;
+    private BuyAndSellGoldAPI API;
     private int sellDay = -1;
     private int buyDay = -1;
 
-    public int getTotalDays() {
-        return prices.length;
-    }
 
-    public int getPriceOnDay(int day) {
-
-        return prices[day];
-    }
-
-    public BuyAndSellGold(int[] prices) {
-        this.prices = prices;
+    public BuyAndSellGold(BuyAndSellGoldAPI API) {
+        this.API = API;
         getOptimalBuyOrSellDay();
+    }
+
+    public int getBuyDay() {
+
+        return buyDay;
+    }
+
+    public int getSellDay() {
+
+        return sellDay;
     }
 
     private void getOptimalBuyOrSellDay() {
@@ -47,14 +49,13 @@ public class BuyAndSellGold {
         }
     }
 
-    public int getBuyDay() {
-
-        return buyDay;
+    private int getTotalDays() {
+        return API.getNumDays();
     }
 
-    public int getSellDay() {
+    private int getPriceOnDay(int day) {
 
-        return sellDay;
+        return API.getPriceOnDay(day);
     }
 
     //This is used for running test only
@@ -62,7 +63,9 @@ public class BuyAndSellGold {
 
         int[] prices  = {7, 9, 4, 5, 14, 12, 1, 5, 12, 8, 12, 9, 10};
 
-        BuyAndSellGold bns = new BuyAndSellGold(prices);
+        BuyAndSellGoldAPI API = new BuyAndSellGoldAPI(prices);
+        BuyAndSellGold bns = new BuyAndSellGold(API);
+
         int buyDay = bns.getBuyDay();
         int sellDay = bns.getSellDay();
         int buyPrice = bns.getPriceOnDay(buyDay);
